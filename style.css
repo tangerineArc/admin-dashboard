@@ -1,13 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-:root {
+:root.light {
+    --primary-text-color: #000000;
+
     --sidebar-text-color: #ffffff;
     --sidebar-background-color: #00a6fb;
 
     --main-background-color: #e7ecef;
+    --secondary-background-color: #ffffff;
+    --pane-background-color: #ffffff;
 
     --accent-color: #ffd500;
     --secondary-accent-color: #c0d6df;
+    --tag-color: grey;
+}
+
+:root.dark {
+    --primary-text-color: #ffffff;
+
+    --sidebar-text-color: #ffffff;
+    --sidebar-background-color: #00132d;
+
+    --main-background-color: #002657;
+    --secondary-background-color: #00377e;
+    --pane-background-color: #001233;
+
+    --accent-color: #ffd500;
+    --secondary-accent-color: #00a6fb;
+    --tag-color: #c0d6df;
 }
 
 *,
@@ -26,6 +46,7 @@ body {
     height: 100vh;
 
     font-family: "Roboto", sans-serif;
+    color: var(--primary-text-color);
 }
 
 aside {
@@ -79,7 +100,8 @@ aside {
     padding: 0 0.8em;
 }
 
-.tabs svg {
+.tabs svg,
+.settings svg {
     width: 1.5rem;
     height: 1.5rem;
     stroke: var(--sidebar-text-color);
@@ -88,6 +110,7 @@ aside {
 
 nav {
     padding: 1.5rem 2rem;
+    background-color: var(--secondary-background-color);
 
     grid-row: 1 / 2;
     grid-column: 2 / 3;
@@ -131,6 +154,7 @@ nav > section:first-child {
 
     font-size: 1rem;
     font-family: inherit;
+    color: inherit;
 }
 
 .search > input:focus {
@@ -144,9 +168,13 @@ nav > section:first-child {
     gap: 1.5rem;
 }
 
-.controls > svg {
+.controls svg {
     width: 1.6rem;
     height: 1.6rem;
+}
+
+.theme-toggler {
+    cursor: pointer;
 }
 
 .profile {
@@ -236,7 +264,7 @@ main {
 }
 
 .projects > div > div {
-    background-color: var(--sidebar-text-color);
+    background-color: var(--pane-background-color);
     padding: 2rem 1.5rem;
     border-radius: 10px;
     border-left: 8px solid var(--accent-color);
@@ -266,6 +294,10 @@ main {
     height: 1.5rem;
 }
 
+.heart-icon {
+    cursor: pointer;
+}
+
 .announcements {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
@@ -273,7 +305,7 @@ main {
 
 .announcements > div,
 .trending > div {
-    background-color: var(--sidebar-text-color);
+    background-color: var(--pane-background-color);
     margin-top: 1rem;
     padding: 2rem;
     border-radius: 10px;
@@ -311,5 +343,5 @@ main {
     margin-top: 0.5rem;
 
     font-size: 0.8rem;
-    color: grey;
+    color: var(--tag-color);
 }
