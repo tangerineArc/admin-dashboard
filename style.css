@@ -289,7 +289,14 @@ main {
     gap: 1rem;
 }
 
-.project-actions > svg {
+.project-actions a {
+    display: flex;
+
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+.project-actions svg {
     width: 1.5rem;
     height: 1.5rem;
 }
