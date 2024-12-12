@@ -177,6 +177,14 @@ nav > section:first-child {
     cursor: pointer;
 }
 
+#moon-icon:hover {
+    stroke: var(--accent-color);
+}
+
+#sun-icon:hover {
+    stroke: var(--sidebar-background-color);
+}
+
 .profile {
     display: flex;
     align-items: center;
@@ -218,6 +226,16 @@ nav > section:last-child {
     font-weight: bold;
 }
 
+a {
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+}
+
 .actions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -234,6 +252,12 @@ nav > section:last-child {
     padding: 0.6rem 1.2rem;
     border-radius: 6rem;
     background-color: var(--sidebar-background-color);
+}
+
+.actions > button:hover {
+    background-color: var(--sidebar-text-color);
+
+    color: var(--sidebar-background-color);
 }
 
 main {
@@ -291,9 +315,6 @@ main {
 
 .project-actions a {
     display: flex;
-
-    text-decoration: none;
-    color: var(--primary-text-color);
 }
 
 .project-actions svg {
